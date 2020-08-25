@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title>源计划任务跟踪管理系统</title>
+		<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
+		<link rel="icon" href="../assets/img/icon.ico" type="image/x-icon" />
+
+		<!-- Fonts and icons -->
+		<script src="../assets/js/plugin/webfont/webfont.min.js"></script>
+		<script>
+			WebFont.load({
+				google: {
+					"families": ["Open+Sans:300,400,600,700"]
+				},
+				custom: {
+					"families": ["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands"],
+					urls: ['../assets/css/fonts.css']
+				},
+				active: function() {
+					sessionStorage.fonts = true;
+				}
+			});
+		</script>
+
+		<!-- CSS Files -->
+		<link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+		<link rel="stylesheet" href="../assets/css/azzara.min.css">
+
+		<!-- CSS Just for demo purpose, don't include it in your project -->
+		<link rel="stylesheet" href="../assets/css/demo.css">
+	</head>
+
+	<body>
+		<div class="wrapper">
+			<!--
+			Tip 1: You can change the background color of the main header using: data-background-color="blue | purple | light-blue | green | orange | red"
+		-->
+			<div class="main-header" data-background-color="purple">
+				<!-- Logo Header -->
+				<div class="logo-header">
+
+					<a href="index.html" class="logo">
+						<img src="../assets/img/logoazzara.svg" alt="navbar brand" class="navbar-brand"> </a>
+					<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon">
+						<i class="fa fa-bars"></i>
+					</span>
+				</button>
+					<button class="topbar-toggler more"><i class="fa fa-ellipsis-v"></i></button>
+					<div class="navbar-minimize">
+						<button class="btn btn-minimize btn-rounded">
+						<i class="fa fa-bars"></i>
+					</button>
+					</div>
+				</div>
+				<!-- End Logo Header -->
+
+				<!-- Navbar Header -->
+				<nav class="navbar navbar-header navbar-expand-lg">
+
+					<div class="container-fluid">
+						<div class="collapse" id="search-nav">
+							<form class="navbar-left navbar-form nav-search mr-md-3">
+								<div class="input-group">
+									<div class="input-group-prepend">
+										<button type="submit" class="btn btn-search pr-1">
+										<i class="fa fa-search search-icon"></i>
+									</button>
+									</div>
+									<input type="text" placeholder="搜索 ..." class="form-control">
+								</div>
+							</form>
+						</div>
+						<ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
+							<li class="nav-item toggle-nav-search hidden-caret">
+								<a class="nav-link" data-toggle="collapse" href="#search-nav" role="button" aria-expanded="false" aria-controls="search-nav">
+									<i class="fa fa-search"></i>
+								</a>
+							</li>
+							<li class="nav-item dropdown hidden-caret">
+								<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
+									<div class="avatar-sm">
+										<img src="../assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
+									</div>
+								</a>
+								<ul class="dropdown-menu dropdown-user animated fadeIn">
+									<li>
+										<div class="user-box">
+											<div class="avatar-lg"><img src="../assets/img/profile.jpg" alt="image profile" class="avatar-img rounded"></div>
+											<div class="u-text">
+												<h4>黄勇</h4>
+												<p class="text-muted">hello@example.com</p>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="dropdown-divider"></div>
+										<a class="dropdown-item" href="#">个人信息</a>
+										<div class="dropdown-divider"></div>
+										<a class="dropdown-item" href="login.html">退出登录</a>
+									</li>
+								</ul>
+							</li>
+
+						</ul>
+					</div>
+				</nav>
+				<!-- End Navbar -->
+			</div>
+
+			<!-- Sidebar -->
+			<div class="sidebar">
+
+				<div class="sidebar-background"></div>
+				<div class="sidebar-wrapper scrollbar-inner">
+					<div class="sidebar-content">
+						<div class="user">
+							<div class="avatar-sm float-left mr-2">
+								<img src="../assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
+							</div>
+							<div class="info">
+								<a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
+									<span>
+									黄勇
+									<span class="user-level">任务管理员</span>
+									<span class="caret"></span>
+									</span>
+								</a>
+								<div class="clearfix"></div>
+
+								<div class="collapse in" id="collapseExample">
+									<ul class="nav">
+										<li>
+											<a href="#profile">
+												<span class="link-collapse">个人信息</span>
+											</a>
+										</li>
+										<li>
+											<a href="#settings">
+												<span class="link-collapse">设置</span>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<ul class="nav">
+							<li class="nav-item ">
+								<a href="index.html">
+									<i class="fas fa-home"></i>
+									<p>全景</p>
+								</a>
+							</li>
+							<li class="nav-section">
+								<span class="sidebar-mini-icon">
+								<i class="fa fa-ellipsis-h"></i>
+								<span class="badge badge-count">5</span>
+								</span>
+								<h4 class="text-section">工作区</h4>
+							</li>
+							<li class="nav-item active">
+								<a href="taskPools.html">
+									<i class="fas fa-layer-group"></i>
+									<p>任务池</p>
+									
+
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="myTask.html">
+									<i class="fas fa-pen-square"></i>
+									<p>我的任务</p>
+									
+
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="tags.html">
+									<i class="fas fa-tags"></i>
+									<p>标签</p>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="users.html">
+									<i class="fas fa-users"></i>
+									<p>团队成员</p>
+								</a>
+							</li>
+
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- End Sidebar -->
+
+			<div class="main-panel">
+				<div class="content">
+					<div class="page-inner">
+						<div class="page-header">
+							<h4 class="page-title">任务池</h4>
+							<div class="btn-group btn-group-page-header ml-auto">
+								<button type="button" class="btn btn-light btn-round btn-page-header-dropdown dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<i class="fa fa-ellipsis-h"></i>
+							</button>
+								<div class="dropdown-menu">
+									<div class="arrow"></div>
+									<a class="dropdown-item" href="forms.html">添加任务</a>
+
+									<a class="dropdown-item" href="#">导入任务</a>
+
+									<div class="dropdown-divider"></div>
+									<a class="dropdown-item" href="#">导入模板下载</a>
+
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-12">
+								<div class="card">
+									<div class="card-body">
+										<ul class="nav nav-pills nav-secondary" id="pills-tab" role="tablist">
+											<li class="nav-item">
+												<a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-all" role="tab" aria-controls="pills-all" aria-selected="true">全部(100)</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" id="pills-nopoint-tab" data-toggle="pill" href="#pills-nopoint" role="tab" aria-controls="pills-nopoint" aria-selected="false">未指派(30)</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" id="pills-point-tab" data-toggle="pill" href="#pills-point" role="tab" aria-controls="pills-point" aria-selected="false">已指派(130)</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" id="pills-finish-tab" data-toggle="pill" href="#pills-finish" role="tab" aria-controls="pills-finish" aria-selected="false">已完成(200)</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" id="pills-cancel-tab" data-toggle="pill" href="#pills-cancel" role="tab" aria-controls="pills-cancel" aria-selected="false">已废弃(50)</a>
+											</li>
+										</ul>
+										<div class="tab-content mt-2 mb-3" id="pills-tabContent">
+											<div class="tab-pane fade show active" id="pills-all" role="tabpanel" aria-labelledby="pills-all-tab">
+												<div class="card">
+													<div class="card-body">
+														<div class="table-responsive">
+															<table id="basic-all-datatable" class="display table table-striped table-hover" >
+																<thead>
+																	<tr>
+																		<th>任务名称</th>
+																		<th>优先级</th>
+																		<th>状态</th>
+																		<th>负责人</th>
+																		<th>更新时间</th>
+																		<th>创建者</th>
+																		<th>创建时间</th>
+																	</tr>
+																</thead>
+																<tbody>										
+																	<tr>
+																		<th><a href="task.html">任务名称</a></th>
+
+																		<td>高</td>
+																		<td>进行中</td>
+																		<td>于小飞</td>
+																		<td>2008/09/26 14:43</td>
+																		<td>赵小军</td>
+																		<td>2008/09/26 14:43</td>
+																	</tr>
+																	<tr>
+																		<th><a href="task.html">任务名称</a></th>
+
+																		<td>高</td>
+																		<td>未指派</td>
+																		<td>-</td>
+																		<td>-</td>
+																		<td>赵小军</td>
+																		<td>2008/09/26 14:43</td>
+																	</tr>
+																	<tr>
+																		<th><a href="task.html">任务名称</a></th>
+
+																		<td>高</td>
+																		<td>未指派</td>
+																		<td>-</td>
+																		<td>-</td>
+																		<td>赵小军</td>
+																		<td>2008/09/26 14:43</td>
+																	</tr>
+																	<tr>
+																		<th><a href="task.html">任务名称</a></th>
+
+																		<td>高</td>
+																		<td>已完成</td>
+																		<td>于小飞</td>
+																		<td>2008/09/26 14:43</td>
+																		<td>赵小军</td>
+																		<td>2008/09/26 14:43</td>
+																	</tr>
+																	<tr>
+																		<th><a href="task.html">任务名称</a></th>
+
+																		<td>高</td>
+																		<td>进行中</td>
+																		<td>于小飞</td>
+																		<td>2008/09/26 14:43</td>
+																		<td>赵小军</td>
+																		<td>2008/09/26 14:43</td>
+																	</tr>
+																	<tr>
+																		<th><a href="task.html">任务名称</a></th>
+
+																		<td>高</td>
+																		<td>进行中</td>
+																		<td>于小飞</td>
+																		<td>2008/09/26 14:43</td>
+																		<td>赵小军</td>
+																		<td>2008/09/26 14:43</td>
+																	</tr>
+																	<tr>
+																		<th><a href="task.html">任务名称</a></th>
+
+																		<td>高</td>
+																		<td>进行中</td>
+																		<td>于小飞</td>
+																		<td>2008/09/26 14:43</td>
+																		<td>赵小军</td>
+																		<td>2008/09/26 14:43</td>
+																	</tr>
+																	<tr>
+																		<th><a href="task.html">任务名称</a></th>
+
+																		<td>高</td>
+																		<td>进行中</td>
+																		<td>于小飞</td>
+																		<td>2008/09/26 14:43</td>
+																		<td>赵小军</td>
+																		<td>2008/09/26 14:43</td>
+																	</tr>
+																	<tr>
+																		<th><a href="task.html">任务名称</a></th>
+
+																		<td>高</td>
+																		<td>进行中</td>
+																		<td>于小飞</td>
+																		<td>2008/09/26 14:43</td>
+																		<td>赵小军</td>
+																		<td>2008/09/26 14:43</td>
+																	</tr>
+																	<tr>
+																		<th><a href="task.html">任务名称</a></th>
+
+																		<td>高</td>
+																		<td>进行中</td>
+																		<td>于小飞</td>
+																		<td>2008/09/26 14:43</td>
+																		<td>赵小军</td>
+																		<td>2008/09/26 14:43</td>
+																	</tr>
+																</tbody>
+															</table>
+														</div>
+														</div>
+												</div>
+											</div>
+											<div class="tab-pane fade" id="pills-nopoint" role="tabpanel" aria-labelledby="pills-nopoint-tab">
+												<div class="card">
+													<div class="card-body">
+														<div class="table-responsive">
+															<table id="basic-nopoint-datatable" class="display table table-striped table-hover" >
+																<thead>
+																	<tr>
+																		<th>任务名称</th>
+																		<th>优先级</th>
+																		<th>状态</th>														
+																		<th>创建者</th>
+																		<th>创建时间</th>
+																	</tr>
+																</thead>
+																<tbody>										
+																	<tr>
+																		<th><a href="task.html">任务名称</a></th>
+
+																		<td>高</td>
+																		<td>未指派</td>
+																		<td>赵小军</td>
+																		<td>2008/09/26 14:43</td>
+																	</tr>
+																	<tr>
+																		<th><a href="task.html">任务名称</a></th>
+
+																		<td>高</td>
+																		<td>未指派</td>
+																		<td>赵小军</td>
+																		<td>2008/09/26 14:43</td>
+																	</tr>
+																	<tr>
+																		<th><a href="task.html">任务名称</a></th>
+
+																		<td>高</td>
+																		<td>未指派</td>
+																		<td>赵小军</td>
+																		<td>2008/09/26 14:43</td>
+																	</tr>
+																	<tr>
+																		<th><a href="task.html">任务名称</a></th>
+
+																		<td>高</td>
+																		<td>未指派</td>
+																		<td>赵小军</td>
+																		<td>2008/09/26 14:43</td>
+																	</tr>
+																</tbody>
+															</table>
+														</div>
+												</div>
+											</div>
+											</div>
+											<div class="tab-pane fade" id="pills-point" role="tabpanel" aria-labelledby="pills-point-tab">
+												<div class="card">
+													<div class="card-body">
+														<div class="table-responsive">
+															<table id="basic-point-datatable" class="display table table-striped table-hover" >
+																<thead>
+																	<tr>
+																		<th>任务名称</th>
+																		<th>优先级</th>
+																		<th>状态</th>
+																		<th>负责人</th>
+																		<th>更新时间</th>
+																		<th>创建者</th>
+																		<th>创建时间</th>
+																	</tr>
+																</thead>
+																<tbody>										
+																	<tr>
+																		<th><a href="task.html">任务名称</a></th>
+
+																		<td>高</td>
+																		<td>已指派</td>
+																		<td>于小飞</td>
+																		<td>2008/09/26 14:43</td>
+																		<td>赵小军</td>
+																		<td>2008/09/26 14:43</td>
+																	</tr>
+																	<tr>
+																		<th><a href="task.html">任务名称</a></th>
+
+																		<td>高</td>
+																		<td>已指派</td>
+																		<td>于小飞</td>
+																		<td>2008/09/26 14:43</td>
+																		<td>赵小军</td>
+																		<td>2008/09/26 14:43</td>
+																	</tr>
+																	<tr>
+																		<th><a href="task.html">任务名称</a></th>
+
+																		<td>高</td>
+																		<td>已指派</td>
+																		<td>于小飞</td>
+																		<td>2008/09/26 14:43</td>
+																		<td>赵小军</td>
+																		<td>2008/09/26 14:43</td>
+																	</tr>
+																	<tr>
+																		<th><a href="task.html">任务名称</a></th>
+
+																		<td>高</td>
+																		<td>已指派</td>
+																		<td>周小雨</td>
+																		<td>2008/09/26 14:43</td>
+																		<td>赵小军</td>
+																		<td>2008/09/26 14:43</td>
+																	</tr>
+																	<tr>
+																		<th><a href="task.html">任务名称</a></th>
+
+																		<td>高</td>
+																		<td>进行中</td>
+																		<td>路北</td>
+																		<td>2008/09/26 14:43</td>
+																		<td>赵小军</td>
+																		<td>2008/09/26 14:43</td>
+																	</tr>
+																	<tr>
+																		<th><a href="task.html">任务名称</a></th>
+
+																		<td>高</td>
+																		<td>进行中</td>
+																		<td>于小飞</td>
+																		<td>2008/09/26 14:43</td>
+																		<td>赵小军</td>
+																		<td>2008/09/26 14:43</td>
+																	</tr>
+																	<tr>
+																		<th><a href="task.html">任务名称</a></th>
+
+																		<td>高</td>
+																		<td>进行中</td>
+																		<td>于小飞</td>
+																		<td>2008/09/26 14:43</td>
+																		<td>赵小军</td>
+																		<td>2008/09/26 14:43</td>
+																	</tr>
+																	<tr>
+																		<th><a href="task.html">任务名称</a></th>
+
+																		<td>高</td>
+																		<td>已指派</td>
+																		<td>于小飞</td>
+																		<td>2008/09/26 14:43</td>
+																		<td>赵小军</td>
+																		<td>2008/09/26 14:43</td>
+																	</tr>
+																	<tr>
+																		<th><a href="task.html">任务名称</a></th>
+
+																		<td>高</td>
+																		<td>进行中</td>
+																		<td>于小飞</td>
+																		<td>2008/09/26 14:43</td>
+																		<td>赵小军</td>
+																		<td>2008/09/26 14:43</td>
+																	</tr>
+																	<tr>
+																		<th><a href="task.html">任务名称</a></th>
+
+																		<td>高</td>
+																		<td>已指派</td>
+																		<td>于小飞</td>
+																		<td>2008/09/26 14:43</td>
+																		<td>赵小军</td>
+																		<td>2008/09/26 14:43</td>
+																	</tr>
+																</tbody>
+															</table>
+														</div>
+												</div>
+											</div>
+											</div>
+											<div class="tab-pane fade" id="pills-finish" role="tabpanel" aria-labelledby="pills-finish-tab">
+												<div class="card">
+													<div class="card-body">
+														<div class="table-responsive">
+															<table id="basic-finish-datatable" class="display table table-striped table-hover" >
+																<thead>
+																	<tr>
+																		<th>任务名称</th>
+																		<th>优先级</th>
+																		<th>状态</th>
+																		<th>负责人</th>
+																		<th>更新时间</th>
+																		<th>创建者</th>
+																		<th>创建时间</th>
+																	</tr>
+																</thead>
+																<tbody>										
+																	<tr>
+																		<th><a href="task.html">任务名称</a></th>
+
+																		<td>高</td>
+																		<td>已完成</td>
+																		<td>于小飞</td>
+																		<td>2008/09/26 14:43</td>
+																		<td>赵小军</td>
+																		<td>2008/09/26 14:43</td>
+																	</tr>
+																	<tr>
+																		<th><a href="task.html">任务名称</a></th>
+
+																		<td>高</td>
+																		<td>已完成</td>
+																		<td>于小飞</td>
+																		<td>2008/09/26 14:43</td>
+																		<td>赵小军</td>
+																		<td>2008/09/26 14:43</td>
+																	</tr>
+																	<tr>
+																		<th><a href="task.html">任务名称</a></th>
+
+																		<td>高</td>
+																		<td>已完成</td>
+																		<td>于小飞</td>
+																		<td>2008/09/26 14:43</td>
+																		<td>赵小军</td>
+																		<td>2008/09/26 14:43</td>
+																	</tr>
+																	<tr>
+																		<th><a href="task.html">任务名称</a></th>
+
+																		<td>高</td>
+																		<td>已完成</td>
+																		<td>于小飞</td>
+																		<td>2008/09/26 14:43</td>
+																		<td>赵小军</td>
+																		<td>2008/09/26 14:43</td>
+																	</tr>
+																	<tr>
+																		<th><a href="task.html">任务名称</a></th>
+
+																		<td>高</td>
+																		<td>已完成</td>
+																		<td>于小飞</td>
+																		<td>2008/09/26 14:43</td>
+																		<td>赵小军</td>
+																		<td>2008/09/26 14:43</td>
+																	</tr>
+																	<tr>
+																		<th><a href="task.html">任务名称</a></th>
+
+																		<td>高</td>
+																		<td>已完成</td>
+																		<td>于小飞</td>
+																		<td>2008/09/26 14:43</td>
+																		<td>赵小军</td>
+																		<td>2008/09/26 14:43</td>
+																	</tr>
+																	<tr>
+																		<th><a href="task.html">任务名称</a></th>
+
+																		<td>高</td>
+																		<td>已完成</td>
+																		<td>于小飞</td>
+																		<td>2008/09/26 14:43</td>
+																		<td>赵小军</td>
+																		<td>2008/09/26 14:43</td>
+																	</tr>
+																	<tr>
+																		<th><a href="task.html">任务名称</a></th>
+
+																		<td>高</td>
+																		<td>已完成</td>
+																		<td>于小飞</td>
+																		<td>2008/09/26 14:43</td>
+																		<td>赵小军</td>
+																		<td>2008/09/26 14:43</td>
+																	</tr>
+																	<tr>
+																		<th><a href="task.html">任务名称</a></th>
+
+																		<td>高</td>
+																		<td>已完成</td>
+																		<td>于小飞</td>
+																		<td>2008/09/26 14:43</td>
+																		<td>赵小军</td>
+																		<td>2008/09/26 14:43</td>
+																	</tr>
+																	<tr>
+																		<th><a href="task.html">任务名称</a></th>
+
+																		<td>高</td>
+																		<td>已完成</td>
+																		<td>于小飞</td>
+																		<td>2008/09/26 14:43</td>
+																		<td>赵小军</td>
+																		<td>2008/09/26 14:43</td>
+																	</tr>
+																</tbody>
+															</table>
+														</div>
+												</div>
+											</div>
+											</div>
+											<div class="tab-pane fade" id="pills-cancel" role="tabpanel" aria-labelledby="pills-cancel-tab">
+												<div class="card">
+													<div class="card-body">
+														<div class="table-responsive">
+															<table id="basic-cancel-datatable" class="display table table-striped table-hover" >
+																<thead>
+																	<tr>
+																		<th>任务名称</th>
+																		<th>优先级</th>
+																		<th>状态</th>
+																		<th>负责人</th>
+																		<th>更新时间</th>
+																		<th>创建者</th>
+																		<th>创建时间</th>
+																	</tr>
+																</thead>
+																<tbody>										
+																	<tr>
+																		<th><a href="task.html">任务名称</a></th>
+
+																		<td>高</td>
+																		<td>废弃</td>
+																		<td>于小飞</td>
+																		<td>2008/09/26 14:43</td>
+																		<td>赵小军</td>
+																		<td>2008/09/26 14:43</td>
+																	</tr>
+																	<tr>
+																		<th><a href="task.html">任务名称</a></th>
+
+																		<td>高</td>
+																		<td>废弃</td>
+																		<td>于小飞</td>
+																		<td>2008/09/26 14:43</td>
+																		<td>赵小军</td>
+																		<td>2008/09/26 14:43</td>
+																	</tr>
+																	<tr>
+																		<th><a href="task.html">任务名称</a></th>
+
+																		<td>高</td>
+																		<td>废弃</td>
+																		<td>于小飞</td>
+																		<td>2008/09/26 14:43</td>
+																		<td>赵小军</td>
+																		<td>2008/09/26 14:43</td>
+																	</tr>
+																	<tr>
+																		<th><a href="task.html">任务名称</a></th>
+
+																		<td>高</td>
+																		<td>废弃</td>
+																		<td>于小飞</td>
+																		<td>2008/09/26 14:43</td>
+																		<td>赵小军</td>
+																		<td>2008/09/26 14:43</td>
+																	</tr>
+																	<tr>
+																		<th><a href="task.html">任务名称</a></th>
+
+																		<td>高</td>
+																		<td>废弃</td>
+																		<td>于小飞</td>
+																		<td>2008/09/26 14:43</td>
+																		<td>赵小军</td>
+																		<td>2008/09/26 14:43</td>
+																	</tr>
+																	<tr>
+																		<th><a href="task.html">任务名称</a></th>
+
+																		<td>高</td>
+																		<td>废弃</td>
+																		<td>于小飞</td>
+																		<td>2008/09/26 14:43</td>
+																		<td>赵小军</td>
+																		<td>2008/09/26 14:43</td>
+																	</tr>
+																	<tr>
+																		<th><a href="task.html">任务名称</a></th>
+
+																		<td>高</td>
+																		<td>废弃</td>
+																		<td>于小飞</td>
+																		<td>2008/09/26 14:43</td>
+																		<td>赵小军</td>
+																		<td>2008/09/26 14:43</td>
+																	</tr>
+																	<tr>
+																		<th><a href="task.html">任务名称</a></th>
+
+																		<td>高</td>
+																		<td>废弃</td>
+																		<td>于小飞</td>
+																		<td>2008/09/26 14:43</td>
+																		<td>赵小军</td>
+																		<td>2008/09/26 14:43</td>
+																	</tr>
+																	<tr>
+																		<th><a href="task.html">任务名称</a></th>
+
+																		<td>高</td>
+																		<td>废弃</td>
+																		<td>于小飞</td>
+																		<td>2008/09/26 14:43</td>
+																		<td>赵小军</td>
+																		<td>2008/09/26 14:43</td>
+																	</tr>
+																	<tr>
+																		<th><a href="task.html">任务名称</a></th>
+
+																		<td>高</td>
+																		<td>废弃</td>
+																		<td>于小飞</td>
+																		<td>2008/09/26 14:43</td>
+																		<td>赵小军</td>
+																		<td>2008/09/26 14:43</td>
+																	</tr>
+																</tbody>
+															</table>
+														</div>
+												</div>
+											</div>
+											</div>
+
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Custom template | don't include it in your project! -->
+			<div class="custom-template">
+				<div class="title">Settings</div>
+				<div class="custom-content">
+					<div class="switcher">
+						<div class="switch-block">
+							<h4>Topbar</h4>
+							<div class="btnSwitch">
+								<button type="button" class="changeMainHeaderColor" data-color="blue"></button>
+								<button type="button" class="selected changeMainHeaderColor" data-color="purple"></button>
+								<button type="button" class="changeMainHeaderColor" data-color="light-blue"></button>
+								<button type="button" class="changeMainHeaderColor" data-color="green"></button>
+								<button type="button" class="changeMainHeaderColor" data-color="orange"></button>
+								<button type="button" class="changeMainHeaderColor" data-color="red"></button>
+							</div>
+						</div>
+						<div class="switch-block">
+							<h4>Background</h4>
+							<div class="btnSwitch">
+								<button type="button" class="changeBackgroundColor" data-color="bg2"></button>
+								<button type="button" class="changeBackgroundColor selected" data-color="bg1"></button>
+								<button type="button" class="changeBackgroundColor" data-color="bg3"></button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="custom-toggle">
+					<i class="flaticon-settings"></i>
+				</div>
+			</div>
+			<!-- End Custom template -->
+		</div>
+
+		<!--   Core JS Files   -->
+		<script src="../assets/js/core/jquery.3.2.1.min.js"></script>
+		<script src="../assets/js/core/popper.min.js"></script>
+		<script src="../assets/js/core/bootstrap.min.js"></script>
+
+		<!-- jQuery UI -->
+		<script src="../assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+		<script src="../assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+
+		<!-- jQuery Scrollbar -->
+		<script src="../assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+
+		<!-- Moment JS -->
+		<script src="../assets/js/plugin/moment/moment.min.js"></script>
+
+		<!-- Chart JS -->
+		<script src="../assets/js/plugin/chart.js/chart.min.js"></script>
+
+		<!-- jQuery Sparkline -->
+		<script src="../assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
+
+		<!-- Chart Circle -->
+		<script src="../assets/js/plugin/chart-circle/circles.min.js"></script>
+
+		<!-- Datatables -->
+		<script src="../assets/js/plugin/datatables/datatables.min.js"></script>
+
+		<!-- Bootstrap Notify -->
+		<script src="../assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
+
+		<!-- Bootstrap Toggle -->
+		<script src="../assets/js/plugin/bootstrap-toggle/bootstrap-toggle.min.js"></script>
+
+		<!-- Google Maps Plugin -->
+		<script src="../assets/js/plugin/gmaps/gmaps.js"></script>
+
+		<!-- Sweet Alert -->
+		<script src="../assets/js/plugin/sweetalert/sweetalert.min.js"></script>
+
+		<!-- Azzara JS -->
+		<script src="../assets/js/ready.min.js"></script>
+
+		<!-- Azzara DEMO methods, don't include it in your project! -->
+		<script src="../assets/js/setting-demo.js"></script>
+		<!-- Datatables -->
+		<script src="../assets/js/plugin/datatables/datatables.min.js"></script>
+		<script >
+		$(document).ready(function() {
+			$('#basic-all-datatable').DataTable( {
+				"pageLength": 5,
+				initComplete: function () {
+					this.api().columns().every( function () {
+						var column = this;
+						var select = $('<select class="form-control"><option value=""></option></select>')
+						.appendTo( $(column.footer()).empty() )
+						.on( 'change', function () {
+							var val = $.fn.dataTable.util.escapeRegex(
+								$(this).val()
+								);
+
+							column
+							.search( val ? '^'+val+'$' : '', true, false )
+							.draw();
+						} );
+
+						column.data().unique().sort().each( function ( d, j ) {
+							select.append( '<option value="'+d+'">'+d+'</option>' )
+						} );
+					} );
+				},
+				 language: {
+				    "decimal": "",//小数的小数位符号  比如“，”作为数字的小数位符号
+				    "emptyTable": "没有数据哟~~",//没有数据时要显示的字符串
+				    "info": "当前 _START_ 条到 _END_ 条 共 _TOTAL_ 条",//左下角的信息，变量可以自定义，到官网详细查看
+				    "infoEmpty": "无记录",//当没有数据时，左下角的信息
+				    "infoFiltered": "(从 _MAX_ 条记录过滤)",//当表格过滤的时候，将此字符串附加到主要信息
+				    "infoPostFix": "",//在摘要信息后继续追加的字符串
+				    "thousands": ",",//千分位分隔符
+				    "lengthMenu": "每页 _MENU_ 条记录",//用来描述分页长度选项的字符串
+				    "loadingRecords": "加载中...",//用来描述数据在加载中等待的提示字符串 - 当异步读取数据的时候显示
+				    "processing": "处理中...",//用来描述加载进度的字符串
+				    "search": "搜索",//用来描述搜索输入框的字符串
+				    "zeroRecords": "没有找到",//当没有搜索到结果时，显示
+				    "paginate": {
+				      "first": "首页",
+				      "previous": "上一页",
+				      "next": "下一页",
+				      "last": "尾页"
+				    }
+				  },
+			});
+			$('#basic-nopoint-datatable').DataTable({
+				language: {
+				    "decimal": "",//小数的小数位符号  比如“，”作为数字的小数位符号
+				    "emptyTable": "没有数据哟~~",//没有数据时要显示的字符串
+				    "info": "当前 _START_ 条到 _END_ 条 共 _TOTAL_ 条",//左下角的信息，变量可以自定义，到官网详细查看
+				    "infoEmpty": "无记录",//当没有数据时，左下角的信息
+				    "infoFiltered": "(从 _MAX_ 条记录过滤)",//当表格过滤的时候，将此字符串附加到主要信息
+				    "infoPostFix": "",//在摘要信息后继续追加的字符串
+				    "thousands": ",",//千分位分隔符
+				    "lengthMenu": "每页 _MENU_ 条记录",//用来描述分页长度选项的字符串
+				    "loadingRecords": "加载中...",//用来描述数据在加载中等待的提示字符串 - 当异步读取数据的时候显示
+				    "processing": "处理中...",//用来描述加载进度的字符串
+				    "search": "搜索",//用来描述搜索输入框的字符串
+				    "zeroRecords": "没有找到",//当没有搜索到结果时，显示
+				    "paginate": {
+				      "first": "首页",
+				      "previous": "上一页",
+				      "next": "下一页",
+				      "last": "尾页"
+				    }
+				  },
+			});
+			$('#basic-point-datatable').DataTable({
+				language: {
+				    "decimal": "",//小数的小数位符号  比如“，”作为数字的小数位符号
+				    "emptyTable": "没有数据哟~~",//没有数据时要显示的字符串
+				    "info": "当前 _START_ 条到 _END_ 条 共 _TOTAL_ 条",//左下角的信息，变量可以自定义，到官网详细查看
+				    "infoEmpty": "无记录",//当没有数据时，左下角的信息
+				    "infoFiltered": "(从 _MAX_ 条记录过滤)",//当表格过滤的时候，将此字符串附加到主要信息
+				    "infoPostFix": "",//在摘要信息后继续追加的字符串
+				    "thousands": ",",//千分位分隔符
+				    "lengthMenu": "每页 _MENU_ 条记录",//用来描述分页长度选项的字符串
+				    "loadingRecords": "加载中...",//用来描述数据在加载中等待的提示字符串 - 当异步读取数据的时候显示
+				    "processing": "处理中...",//用来描述加载进度的字符串
+				    "search": "搜索",//用来描述搜索输入框的字符串
+				    "zeroRecords": "没有找到",//当没有搜索到结果时，显示
+				    "paginate": {
+				      "first": "首页",
+				      "previous": "上一页",
+				      "next": "下一页",
+				      "last": "尾页"
+				    }
+				  },
+			});
+			$('#basic-finish-datatable').DataTable({
+				language: {
+				    "decimal": "",//小数的小数位符号  比如“，”作为数字的小数位符号
+				    "emptyTable": "没有数据哟~~",//没有数据时要显示的字符串
+				    "info": "当前 _START_ 条到 _END_ 条 共 _TOTAL_ 条",//左下角的信息，变量可以自定义，到官网详细查看
+				    "infoEmpty": "无记录",//当没有数据时，左下角的信息
+				    "infoFiltered": "(从 _MAX_ 条记录过滤)",//当表格过滤的时候，将此字符串附加到主要信息
+				    "infoPostFix": "",//在摘要信息后继续追加的字符串
+				    "thousands": ",",//千分位分隔符
+				    "lengthMenu": "每页 _MENU_ 条记录",//用来描述分页长度选项的字符串
+				    "loadingRecords": "加载中...",//用来描述数据在加载中等待的提示字符串 - 当异步读取数据的时候显示
+				    "processing": "处理中...",//用来描述加载进度的字符串
+				    "search": "搜索",//用来描述搜索输入框的字符串
+				    "zeroRecords": "没有找到",//当没有搜索到结果时，显示
+				    "paginate": {
+				      "first": "首页",
+				      "previous": "上一页",
+				      "next": "下一页",
+				      "last": "尾页"
+				    }
+				  },
+			});
+			$('#basic-cancel-datatable').DataTable({
+				language: {
+				    "decimal": "",//小数的小数位符号  比如“，”作为数字的小数位符号
+				    "emptyTable": "没有数据哟~~",//没有数据时要显示的字符串
+				    "info": "当前 _START_ 条到 _END_ 条 共 _TOTAL_ 条",//左下角的信息，变量可以自定义，到官网详细查看
+				    "infoEmpty": "无记录",//当没有数据时，左下角的信息
+				    "infoFiltered": "(从 _MAX_ 条记录过滤)",//当表格过滤的时候，将此字符串附加到主要信息
+				    "infoPostFix": "",//在摘要信息后继续追加的字符串
+				    "thousands": ",",//千分位分隔符
+				    "lengthMenu": "每页 _MENU_ 条记录",//用来描述分页长度选项的字符串
+				    "loadingRecords": "加载中...",//用来描述数据在加载中等待的提示字符串 - 当异步读取数据的时候显示
+				    "processing": "处理中...",//用来描述加载进度的字符串
+				    "search": "搜索",//用来描述搜索输入框的字符串
+				    "zeroRecords": "没有找到",//当没有搜索到结果时，显示
+				    "paginate": {
+				      "first": "首页",
+				      "previous": "上一页",
+				      "next": "下一页",
+				      "last": "尾页"
+				    }
+				  },
+			});
+			
+	
+		});
+	</script>
+	</body>
+
+</html>
